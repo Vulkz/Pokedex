@@ -1,4 +1,5 @@
 @import url(./pokedex.css);
+@import url(./pokemon.css);
 
 * {
     font-family: 'Roboto', sans-serif;
