@@ -4,6 +4,8 @@ const loadMoreButton = document.getElementById('loadMoreButton');
 const limit = 10;
 let offset = 0;
 
+const maxRecords = 20;
+
 function convertPokemonToHtml(pokemon) {
     return `
         <li class="pokemon ${pokemon.type}">
@@ -34,6 +36,15 @@ loadPokemonItens(offset, limit);
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit;
-    
-    loadPokemonItens(offset, limit);
+
+    const qtdRecordNewPage = offset + limit;
+
+    if (qtdRecordNewPage >= maxRecords) {
+        const newLimit = maxRecords - offset;
+        loadPokemonItens(offset, newLimit);
+
+        loadMoreButton.parentElement.removeChild(loadMoreButton);
+    } else {
+        loadPokemonItens(offset, limit);
+    }
 })
