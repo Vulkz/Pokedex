@@ -7,8 +7,10 @@ let offset = 0;
 const maxRecords = 20;
 
 function convertPokemonToHtml(pokemon) {
+
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="status(${pokemon.number})">
+        
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -20,7 +22,7 @@ function convertPokemonToHtml(pokemon) {
                 <img src="${pokemon.photo}" 
                 alt="${pokemon.name}">
             </div>
-            
+
         </li>
     `
 }
@@ -48,3 +50,9 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit);
     }
 })
+
+function status(id) {
+
+
+    document.getElementsByClassName('content')[0].style.display = 'none';
+}
