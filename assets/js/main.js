@@ -6,8 +6,6 @@ const pokemonD = document.getElementsByClassName('pokemonStatus')[0];
 const limit = 10;
 let offset = 0;
 
-const maxRecords = 20;
-
 function convertPokemonToHtml(pokemon) {
 
     return `
@@ -41,16 +39,7 @@ loadPokemonItens(offset, limit);
 loadMoreButton.addEventListener('click', () => {
     offset += limit;
 
-    const qtdRecordNewPage = offset + limit;
-
-    if (qtdRecordNewPage >= maxRecords) {
-        const newLimit = maxRecords - offset;
-        loadPokemonItens(offset, newLimit);
-
-        loadMoreButton.parentElement.removeChild(loadMoreButton);
-    } else {
-        loadPokemonItens(offset, limit);
-    }
+    loadPokemonItens(offset, limit);
 })
 
 function detalhesDoPokemon(pokemonModel) {
