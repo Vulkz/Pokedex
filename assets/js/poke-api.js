@@ -48,6 +48,15 @@ pokeApi.getDetailPokemon = (pokeDetail) => {
     pokemon.type = types[0];
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
 
+    pokemon.stats = pokeDetail.stats.map((stat) => stat.base_stat);
+
+    pokemon.hp = pokemon.stats[0];
+    pokemon.atc = pokemon.stats[1];
+    pokemon.def = pokemon.stats[2];
+    pokemon.sAtc = pokemon.stats[3];
+    pokemon.sDef = pokemon.stats[4];
+    pokemon.vel = pokemon.stats[5];
+
     return pokemon;
 }
 

@@ -71,12 +71,43 @@ function detalhesDoPokemon(pokemonModel) {
             </div>
 
             <img class="img" src="${pokemonModel.photo}" alt="imagem do pokemon">
+
+        </div>
+
+        <div class="container">
+            <div class="statusHeader">
+                <button class="headerButton stats"  onclick="sts()">Status</button>
+                <button class="headerButton abilities" onclick="hab()">Habilidades</button>
+            </div>
+            <div class="statsValue">
+                <span class="statusItem"><b>HP :</b> <input type="range" value="${pokemonModel.hp}" disabled></span>
+                <span class="statusItem"><b>VEL:</b> <input type="range" value="${pokemonModel.vel}" disabled></span>
+                <span class="statusItem"><b>ATC:</b> <input type="range" value="${pokemonModel.atc}" disabled></span>
+                <span class="statusItem"><b>DEF:</b> <input type="range" value="${pokemonModel.def}" disabled></span>
+                <span class="titleStatus"><b>SPECIAL</b></span>
+                <span class="statusItem"><b>ATC:</b> <input type="range" value="${pokemonModel.sAtc}" disabled></span>
+                <span class="statusItem"><b>DEF:</b> <input type="range" value="${pokemonModel.sDef}" disabled></span>
+            </div>
         </div>
     `
 }
 
+function hab() {
+    document.getElementsByClassName('statsValue')[0].style.display = 'none';
+
+    // habilidades
+    document.getElementsByClassName('abilities')[0].style.fontWeight = 'bold';
+    document.getElementsByClassName('abilities')[0].style.textDecoration = 'underline';
+
+    //status
+    document.getElementsByClassName('stats')[0].style.fontWeight = 'normal';
+    document.getElementsByClassName('stats')[0].style.textDecoration = 'none';
+
+}
+
 function voltar() {
     document.getElementsByClassName('content')[0].style.display = 'block';
+    document.getElementsByClassName('container')[0].remove();
     document.getElementsByClassName('container')[0].remove();
 }
 

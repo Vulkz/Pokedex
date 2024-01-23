@@ -12,4 +12,12 @@ class PokemonDetalhe {
     type;
     types = [];
     photo;
+
+    stats = [];
+    hp;
+    atc;
+    def;
+    vel;
+    sAtc;
+    sDef;
 }
