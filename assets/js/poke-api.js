@@ -57,6 +57,11 @@ pokeApi.getDetailPokemon = (pokeDetail) => {
     pokemon.sDef = pokemon.stats[4];
     pokemon.vel = pokemon.stats[5];
 
+    pokemon.ataques = pokeDetail.abilities.map((abilitie) => abilitie.ability.name);
+
+    pokemon.altura = pokeDetail.height / 10; 
+    pokemon.peso = pokeDetail.weight / 10;
+
     return pokemon;
 }
 

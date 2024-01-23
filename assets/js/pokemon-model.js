@@ -20,4 +20,9 @@ class PokemonDetalhe {
     vel;
     sAtc;
     sDef;
+
+    ataques = [];
+
+    altura;
+    peso;
 }
