@@ -130,3 +130,72 @@ input[type='range']::-webkit-slider-thumb {
     padding: 3px;
     margin-bottom: 1em;
 }
+
+#voltar {
+    width: 2rem;
+    height: 2rem;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (min-width: 992px) {
+    html, body {
+        height: 100vh;
+    }
+
+    .content {
+        display: block;
+        box-sizing: content-box;
+        margin: auto;
+    }
+
+    .pokemonStatus {
+        display: none;
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .container {
+        width: 40vw;
+        display: inline-block;
+        height: 100vh;
+    }
+
+    .img {
+        max-width: 30vw;
+    }
+
+    .statsHab {
+        display: none;
+        grid-template-columns: 30vw;
+    }
+
+    .statsValue {
+        grid-template-columns: 30vw;
+    }
+
+    .statusItem {
+        color: black;
+        display: grid;
+        grid-column: 1/3;
+        grid-template-columns: 10vw 30vw;
+        margin-bottom: 0.5em;
+        gap: 1em;
+    }
+
+    .statusIte {
+        color: black;
+        display: grid;
+        grid-column: 1/3;
+        grid-template-columns: 10vw 30vw;
+        margin-bottom: 0.5em;
+        gap: 1em;
+    }
+
+    input[type='range'] {
+        width: 30vw;
+    }
+
+
+}

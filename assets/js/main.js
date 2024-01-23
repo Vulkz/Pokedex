@@ -57,7 +57,7 @@ function detalhesDoPokemon(pokemonModel) {
 
     return `
         <div class="${pokemonModel.type} container">
-            <button id="voltar" onclick="voltar()">voltar</button>
+            <button id="voltar" onclick="voltar()"><img src="./assets/img/chevron-back-outline.svg" alt="botão voltar"></button>
 
             <h2 class="pokemonName">${pokemonModel.name}</h2>
 
@@ -129,6 +129,8 @@ function hab() {
 }
 
 function voltar() {
+    document.getElementsByClassName('pokemonStatus')[0].style.display = 'none';
+
     document.getElementsByClassName('content')[0].style.display = 'block';
     document.getElementsByClassName('container')[0].remove();
     document.getElementsByClassName('container')[0].remove();
@@ -136,7 +138,7 @@ function voltar() {
 
 function status(id) {
     document.getElementsByClassName('content')[0].style.display = 'none';
-    document.getElementsByClassName('pokemonStatus')[0].style.display = 'block';
+    document.getElementsByClassName('pokemonStatus')[0].style.display = 'flex';
     pokeApi.getPokemon(id).then((pokemon) => {
         pokemonD.innerHTML += detalhesDoPokemon(pokemon);
     })
