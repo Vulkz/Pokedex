@@ -127,7 +127,7 @@ function voltar() {
 
 function status(id) {
     document.getElementsByClassName('content')[0].style.display = 'none';
-    document.getElementsByClassName('pokemonStatus')[0].style.display = 'flex';
+    document.getElementsByClassName('pokemonStatus')[0].style.display = 'block';
     pokeApi.getPokemon(id).then((pokemon) => {
         pokemonD.innerHTML += detalhesDoPokemon(pokemon);
     })
